@@ -1,0 +1,37 @@
+
+<ion-header>
+    
+    <ion-navbar>
+        <ion-title>Registrar Aula</ion-title>
+    </ion-navbar>
+    
+</ion-header>
+
+
+<ion-content padding>
+    
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Título</ion-label>
+            <ion-input [(ngModel)]="record.titulo"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Atividades</ion-label>
+            <ion-input [(ngModel)]="record.atividades"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Alunos Presentes <span class="in-info">(separe por ,)</span></ion-label>
+            <ion-input [(ngModel)]="record.__alunos"></ion-input>
+        </ion-item>
+        
+    </ion-list>
+
+    <button ion-button (click)="clear()">Limpar</button>
+    <button ion-button (click)="editRecord( record )" *ngIf="editing">Editar</button>
+
+    <button class=new-record ion-button (click)="sendRecord( record )">Registrar</button>
+    
+
+</ion-content>

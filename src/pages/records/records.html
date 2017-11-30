@@ -1,0 +1,30 @@
+
+<ion-header>
+    
+    <ion-navbar>
+        <ion-title>Aulas Registradas</ion-title>
+        
+        <ion-buttons end>
+            <button ion-button icon-only navPush=record>
+                <ion-icon name="add-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+        
+    </ion-navbar>
+    
+</ion-header>
+
+
+<ion-content padding>
+    
+    <ion-list>
+        <ion-item *ngFor="let record of _records | async" navPush=record [navParams]=record>
+            
+            <ion-icon name="bookmark" item-start></ion-icon>
+            <h2>{{record.titulo}}</h2>
+            <p>{{record.atividades}}</p>      
+            
+        </ion-item>
+    </ion-list>
+    
+</ion-content>
